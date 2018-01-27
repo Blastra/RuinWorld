@@ -2,7 +2,7 @@ from cocos.menu import Menu, CENTER, MenuItem, shake, shake_back, ImageMenuItem
 from cocos.director import director
 from cocos.scene import Scene
 from MainScene import MainScene
-
+from Constants import Constants
 
 class TitleMenu(Menu):
 
@@ -14,8 +14,8 @@ class TitleMenu(Menu):
         self.menu_halign = CENTER
 
         menu_items = [
-            (ImageMenuItem('assets/images/UI_newgame_button.png', self.loadGame)),
-            (ImageMenuItem('assets/images/UI_quit_button.png', self.quitGame))
+            (ImageMenuItem(Constants.Paths.Buttons.newGame, self.loadGame)),
+            (ImageMenuItem(Constants.Paths.Buttons.quit, self.quitGame))
         ]
 
         self.create_menu(menu_items)
