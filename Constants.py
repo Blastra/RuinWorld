@@ -13,6 +13,8 @@ class Constants:
 
         class Buttons:
             tank = "assets/images/UI_button_tank_128px.png"
+            missile = "assets/images/UI_button_missile_128px.png"
+            nuke = "assets/images/UI_button_nuke_128px.png"
             newGame = "assets/images/UI_newgame_button.png"
             quit = "assets/images/UI_quit_button.png"
 
