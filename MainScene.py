@@ -17,9 +17,13 @@ class MainScene(Scene):
 
         self.state = state
 
+        mainLayer = MainLayer(self.state)
+        hudLayer = HudLayer(self.state)
+        hudLayer.push_handlers(mainLayer)
+
         self.add(BackgroundLayer(self.state))
-        self.add(MainLayer(self.state))
-        self.add(HudLayer(self.state))
+        self.add(mainLayer)
+        self.add(hudLayer)
 
         # This way does not work for some reason:
         #cocos.audio.pygame.music.load("assets/musics/33pTransition.wav")

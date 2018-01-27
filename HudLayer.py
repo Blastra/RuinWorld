@@ -1,9 +1,11 @@
+import pyglet
 from cocos.layer import Layer
 from cocos.text import Label
 from cocos.sprite import Sprite
 from Constants import Constants
 
-class HudLayer(Layer):
+
+class HudLayer(Layer, pyglet.event.EventDispatcher):
     is_event_handler = True
 
     def __init__(self, state):
@@ -54,3 +56,13 @@ class HudLayer(Layer):
             self.nukeButton.scale = 1.1
         else:
             self.nukeButton.scale = 1.0
+
+    def on_mouse_press(self, x, y, buttons, modifiers):
+        if self.tankButton.get_rect().contains(x, y):
+            self.tankButton.scale = 2
+            self.dispatch_event('on_tank_purchase', self)
+
+
+HudLayer.register_event_type('on_tank_purchase')
+HudLayer.register_event_type('on_missile_purchase')
+HudLayer.register_event_type('on_nuke_purchase')

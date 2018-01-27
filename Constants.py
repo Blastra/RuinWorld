@@ -37,3 +37,5 @@ class Constants:
             missile = "assets/images/Units_missile_64px.png"
             nuke = "assets/images/Units_nuke_128px.png"
             satellite = "assets/images/Units_satellite.png"
+            tankGreen = "assets/images/tank_green_128px.png"
+            tankGrey = "assets/images/tank_grey_128px.png"
