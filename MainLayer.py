@@ -3,6 +3,7 @@ import pyglet
 from cocos.layer import Layer
 from cocos.actions import MoveBy, MoveTo, Jump
 
+
 class MainLayer(Layer):
     is_event_handler = True
 
@@ -17,6 +18,12 @@ class MainLayer(Layer):
 
         self.timer = 0
         self.sprite.schedule(self.scaleAll)
+
+        for city in self.state.player1.cities:
+            self.add(city)
+
+        for city in self.state.player2.cities:
+            self.add(city)
 
     def scaleAll(self, delta):
         self.timer += 1
