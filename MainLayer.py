@@ -6,8 +6,10 @@ from cocos.actions import MoveBy, MoveTo, Jump
 class MainLayer(Layer):
     is_event_handler = True
 
-    def __init__(self):
+    def __init__(self, state):
         super(MainLayer, self).__init__()
+
+        self.state = state
 
         self.sprite = cocos.sprite.Sprite('assets/tank_green_128px.png')
         self.sprite.position = 100, 100

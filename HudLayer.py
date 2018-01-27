@@ -2,8 +2,11 @@ from cocos.layer import Layer
 from cocos.text import Label
 
 class HudLayer(Layer):
-    def __init__(self):
+    def __init__(self, state):
         super(HudLayer, self).__init__()
+
+        self.state = state
+
         self.resourceLabel = Label(
             "RESOURCES 0/2000",
             font_name = "DejaVu Sans",

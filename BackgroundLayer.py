@@ -2,8 +2,12 @@ import cocos
 from cocos.layer import Layer
 
 class BackgroundLayer(Layer):
-    def __init__(self):
+
+    def __init__(self, state):
         super(BackgroundLayer, self).__init__()
+
+        self.state = state
+
         self.skySprite = cocos.sprite.Sprite('assets/World_background_1280px.png')
         self.skySprite.position = 0, 0
         self.skySprite.image_anchor = 0, 0
