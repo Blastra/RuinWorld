@@ -13,9 +13,16 @@ class TitleMenu(Menu):
         self.menu_valign = CENTER
         self.menu_halign = CENTER
 
+        self.posX, self.posY = self.position
+        self.position = self.posX, self.posY - 90
+
+        newGameBtn = ImageMenuItem(Constants.Paths.Buttons.newGame, self.loadGame)
+        quitGameBtn = ImageMenuItem(Constants.Paths.Buttons.quit, self.quitGame)
+        self.scale = 2
+
         menu_items = [
-            (ImageMenuItem(Constants.Paths.Buttons.newGame, self.loadGame)),
-            (ImageMenuItem(Constants.Paths.Buttons.quit, self.quitGame))
+            (newGameBtn),
+            (quitGameBtn)
         ]
 
         self.create_menu(menu_items)
