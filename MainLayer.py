@@ -11,7 +11,7 @@ class MainLayer(Layer):
 
         self.state = state
 
-        self.sprite = cocos.sprite.Sprite('assets/tank_green_128px.png')
+        self.sprite = cocos.sprite.Sprite('assets/images/tank_green_128px.png')
         self.sprite.position = 100, 100
         self.add(self.sprite)
 
