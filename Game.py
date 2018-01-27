@@ -41,7 +41,7 @@ class MainLayer(Layer):
     def __init__(self):
         super(MainLayer, self).__init__()
 
-        self.sprite = cocos.sprite.Sprite('assets/tank_green_128px.png')
+        self.sprite = cocos.sprite.Sprite('assets/Units_tank_green_128px.png')
         self.sprite.position = 100, 100
         self.add(self.sprite)
 
@@ -52,7 +52,9 @@ class MainLayer(Layer):
         self.timer += 1
 
     def on_mouse_press(self, x, y, buttons, modifiers):
-        actions = MoveTo((x,y), 2) + Jump(50, 100, 5, 3)
+        actions = MoveTo((x,y), 2) + Jump#------------------------------------------------------------------------------
+#
+#-------------------------------------------------------------------(50, 100, 5, 3)
         #self.sprite.do(MoveTo((x,y), 2) + Jump(50, 0, 1, 1))
         self.sprite.do(actions)
 
@@ -67,7 +69,9 @@ class MainLayer(Layer):
             self.sprite.do(MoveBy((0, -50), .5))
 
 # MAIN STUFF:
-
+#------------------------------------------------------------------------------
+#
+#-------------------------------------------------------------------
 director.init(1280, 720, caption="Ruin World")
 
 director.run(
