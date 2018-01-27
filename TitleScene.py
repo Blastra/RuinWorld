@@ -5,18 +5,14 @@ from cocos.director import director
 from TitleBackgroundLayer import TitleBackgroundLayer
 from TitleMenu import TitleMenu
 
+
 class TitleScene(Scene):
     is_event_handler = True
 
-    def __init__(self):
+    def __init__(self, state):
         super(TitleScene, self).__init__()
-        pass
+
+        self.state = state
 
         self.add(TitleBackgroundLayer())
-        self.add(TitleMenu())
-        #menu
-
-
-
-director.init(1280, 720, caption="Ruin World")
-director.run(TitleScene())
+        self.add(TitleMenu(self.state))

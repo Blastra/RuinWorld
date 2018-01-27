@@ -1,8 +1,15 @@
 from cocos.menu import Menu, CENTER, MenuItem, shake, shake_back, ImageMenuItem
+from cocos.director import director
+from cocos.scene import Scene
+from MainScene import MainScene
+
 
 class TitleMenu(Menu):
-    def __init__(self):
+
+    def __init__(self, state):
         super(TitleMenu, self).__init__()
+
+        self.state = state
         self.menu_valign = CENTER
         self.menu_halign = CENTER
 
@@ -14,9 +21,8 @@ class TitleMenu(Menu):
         self.create_menu(menu_items)
 
     def loadGame(self):
-        # Load game scene
-        pass
-
+        mainScene = MainScene(self.state)
+        director.replace(mainScene)
 
     def quitGame(self):
         exit()

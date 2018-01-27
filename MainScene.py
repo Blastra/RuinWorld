@@ -15,7 +15,7 @@ class MainScene(Scene):
     def __init__(self, state):
         super(MainScene, self).__init__()
 
-        self.state = State()
+        self.state = state
 
         self.add(BackgroundLayer(self.state))
         self.add(MainLayer(self.state))
