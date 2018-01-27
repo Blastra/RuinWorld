@@ -6,6 +6,7 @@ from cocos import scene
 from cocos.layer import Layer
 from cocos.director import director
 from cocos.actions import *
+from HudLayer import HudLayer
 
 class BackgroundLayer(Layer):
     def __init__(self):
@@ -20,20 +21,6 @@ class BackgroundLayer(Layer):
         self.groundSprite.image_anchor = 0, 0
         self.add(self.groundSprite)
         pass
-
-class HudLayer(Layer):
-    def __init__(self):
-        super(HudLayer, self).__init__()
-        self.resourceLabel = Label(
-            "RESOURCES 0/2000",
-            font_name = "DejaVu Sans",
-            font_size = 32,
-            anchor_x = 'center',
-            anchor_y = 'center'
-        )
-
-        self.resourceLabel.position = 1280 / 2, 720 - 20
-        self.add(self.resourceLabel)
 
 class MainLayer(Layer):
     is_event_handler = True
