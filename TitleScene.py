@@ -1,7 +1,4 @@
-from cocos.sprite import Sprite
 from cocos.scene import Scene
-from cocos.layer import Layer
-from cocos.director import director
 from TitleBackgroundLayer import TitleBackgroundLayer
 from TitleMenu import TitleMenu
 
