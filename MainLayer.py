@@ -2,7 +2,6 @@ import cocos
 import pyglet
 import random
 from cocos.layer import Layer
-from cocos.actions import MoveBy, MoveTo, Jump
 from cocos.sprite import Sprite
 from cocos.director import director
 from cocos.scenes import *
