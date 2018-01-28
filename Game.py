@@ -1,5 +1,4 @@
 from cocos.director import director
-from MainScene import MainScene
 from State import State
 from TitleScene import TitleScene
 
@@ -10,5 +9,5 @@ class Game:
         self.titleScene = TitleScene(self.state)
 
 
-director.init(1280, 720, caption="Ruin World")
+director.init(width=1280, height=720, do_not_scale=True, caption="Ruin World")
 director.run(Game().titleScene)
