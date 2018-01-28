@@ -36,8 +36,13 @@ class EndLayer(Layer):
         background = Sprite(backgroundName)
         background.position = 1280/2, 720/2
 
-        backToMenuLabel = Label("PRESS SPACE TO GO BACK TO MAIN MENU")
-        backToMenuLabel.position = 1280/2 - 180, 720/2
+        backToMenuLabel = Label(
+            "PRESS SPACE TO GO BACK TO MAIN MENU",
+            font_size=32,
+            anchor_x='center',
+            anchor_y='center'
+        )
+        backToMenuLabel.position = 1280/2, 720/2
 
         self.add(background)
         self.add(backToMenuLabel)
