@@ -25,6 +25,7 @@ class State:
         self.player1 = Player() # Human player
         self.player2 = Player() # AI player
 
+        # Initial cities
         city1 = cocos.sprite.Sprite(Constants.Paths.Units.city)
         city1.position = (0 + city1.width / 2, 190 + city1.height / 2)
         self.player1.cities.append(city1)
@@ -34,3 +35,6 @@ class State:
         city2.scale_x = -1.0
         self.player2.cities.append(city2)
 
+        # Initial resources
+        self.player1.resources = 2000
+        self.player2.resources = 2000
