@@ -17,6 +17,7 @@ class Player:
         self.nukes = []
         self.satellites = 0
         self.cities = []
+        self.health = 100
 
 
 class State:

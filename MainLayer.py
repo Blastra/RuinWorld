@@ -4,7 +4,10 @@ import random
 from cocos.layer import Layer
 from cocos.actions import MoveBy, MoveTo, Jump
 from cocos.sprite import Sprite
+from cocos.director import director
+from cocos.scenes import *
 from Constants import Constants
+from EndScene import EndScene
 
 
 class MainLayer(Layer):
@@ -48,6 +51,12 @@ class MainLayer(Layer):
             self.sprite.do(MoveBy((0, 50), .5))
         if key == pyglet.window.key.DOWN:
             self.sprite.do(MoveBy((0, -50), .5))
+        if key == pyglet.window.key.F1:
+            self.state.player1.health = 0
+            self.showEndScene()
+        if key == pyglet.window.key.F2:
+            self.state.player2.health = 0
+            self.showEndScene()
 
     def on_tank_purchase(self, emitter):
         print("tank purchased")
@@ -61,3 +70,6 @@ class MainLayer(Layer):
     def update(self, dt):
         for tank in self.state.player1.tanks:
             tank.position = tank.position[0] + tank.velocity[0] * dt, tank.position[1]
+
+    def showEndScene(self):
+        director.replace(ZoomTransition(EndScene(self.state)))
