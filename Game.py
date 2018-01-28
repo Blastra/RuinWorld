@@ -9,5 +9,5 @@ class Game:
         self.titleScene = TitleScene(self.state)
 
 
-director.init(width=1280, height=720, do_not_scale=True, caption="Ruin World")
+director.init(width=1280, height=720, autoscale=False, caption="Ruin World")
 director.run(Game().titleScene)
