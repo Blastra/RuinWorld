@@ -20,3 +20,26 @@ You need to download v1.2 version of these dll's
 * libmikmod-2.dll
 * libogg-0.dll
 
+## TODOish
+What we had in list to do to get the minimum viable product going on. Not in particular order:
+
+1. sounds, musics and effects to the game
+
+2. events -> when pressing the "Purhcase" buttons, event will be send to different layer to do the actions (Buy unit if enough money, show unit on the screen etc).
+
+3. AI for enemy player. Simple AI that will purchase random unit when available funds.
+
+4. Increasing resources every second and after getting enemy damaged
+
+5. Units and their properties
+
+6. Win & Lose condition -> showing end screen and then back to main menu
+
+7. Power vs other units™ -table
+
+|            | Many tanks | Missile | Nuke | Few tanks |
+|------------|------------|---------|------|-----------|
+| Many tanks |      0     |    +    |   x  |     -     |
+|    Missile |      -     |  minor  |   x  |     +     |
+|       Nuke |      x     |    x    |   x  |     x     |
+|  Few tanks |      +     |    -    |   x  |     0     |
