@@ -41,6 +41,17 @@ class HudLayer(Layer, pyglet.event.EventDispatcher):
         self.nukeButton.position = left, 80
         self.add(self.nukeButton)
 
+        self.schedule_interval(self.constitutiveCitizenReward, 0.2)
+
+    def constitutiveCitizenReward(self, dt):
+        self.state.player1.resources += 10
+        self.state.player2.resources += 10
+        if (self.state.player1.resources > 2000):
+            self.state.player1.resources = 2000
+        if (self.state.player2.resources > 2000):
+            self.state.player2.resources = 2000
+        self.setResourceLabel(self.state.player1.resources)
+
     def setResourceLabel(self, resources):
         self.resourceLabel.element.text = "RESOURCES %d/2000" % self.state.player1.resources
 
@@ -62,8 +73,8 @@ class HudLayer(Layer, pyglet.event.EventDispatcher):
 
     def on_mouse_press(self, x, y, buttons, modifiers):
         if self.tankButton.get_rect().contains(x, y):
-            if self.state.player1.resources >= 50:
-                self.state.player1.resources -= 50
+            if self.state.player1.resources >= 200:
+                self.state.player1.resources -= 200
                 self.setResourceLabel(self.state.player1.resources)
                 self.dispatch_event('on_tank_purchase', self)
 
