@@ -3,6 +3,12 @@ from Constants import Constants
 from cocos.sprite import Sprite
 
 
+class Movable(Sprite):
+    def __init__(self):
+        super(Movable, self).__init__()
+        self.velocity = (0, 0)
+
+
 class Player:
     def __init__(self):
         self.resources = 0

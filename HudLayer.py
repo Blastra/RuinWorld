@@ -59,7 +59,6 @@ class HudLayer(Layer, pyglet.event.EventDispatcher):
 
     def on_mouse_press(self, x, y, buttons, modifiers):
         if self.tankButton.get_rect().contains(x, y):
-            self.tankButton.scale = 2
             self.dispatch_event('on_tank_purchase', self)
 
 

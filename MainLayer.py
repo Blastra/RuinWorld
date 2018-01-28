@@ -29,6 +29,8 @@ class MainLayer(Layer):
         self.timer = 0
         self.sprite.schedule(self.scaleAll)
 
+        self.schedule(self.update)
+
     def scaleAll(self, delta):
         self.timer += 1
 
@@ -49,8 +51,13 @@ class MainLayer(Layer):
 
     def on_tank_purchase(self, emitter):
         print("tank purchased")
-        print(self.state.player1.tanks)
         tank = Sprite(Constants.Paths.Units.tankGreen)
         self.state.player1.tanks.append(tank)
         self.add(tank)
         tank.position = random.randint(tank.width / 2, 300), 190 + tank.height / 2
+        tank.velocity = (100.0, 0.0)
+        tank.gasoline = random.randint(0, 1280)
+
+    def update(self, dt):
+        for tank in self.state.player1.tanks:
+            tank.position = tank.position[0] + tank.velocity[0] * dt, tank.position[1]
