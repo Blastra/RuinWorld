@@ -1,6 +1,9 @@
 # RuinWorld
 
 Notes:
+- Game is made for Finnish Game Jam/Global Game Jam 2018
+- We used about 17hrs to coding with no previous experience of cocos2d and the Python
+- We noticed that we are not using "good conventions" of the Python when naming stuff
 - Codes should be placed here in the root folder (cannot access parent folder in Python? blah no time to investigate)
 - 'assets' is a submodule for RuinWorld-Assets repo
 
